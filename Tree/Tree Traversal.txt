@@ -1,0 +1,54 @@
+a) Listing files in alphabetical order (BST case)
+
+If this were a Binary Search Tree (BST):
+
+👉 Use Inorder Traversal (Left → Root → Right)
+Because inorder traversal of a BST always gives sorted order.
+
+b) Calculate total size of a directory
+
+To compute size, you must process all children before the parent.
+
+👉 Use Postorder Traversal (Left → Right → Root)
+This ensures:
+
+First calculate sizes of subdirectories/files
+Then combine them at the parent
+c) Create backup of entire directory structure
+
+You want to copy:
+
+Root first
+Then recursively copy subdirectories
+
+👉 Use Preorder Traversal (Root → Left → Right)
+Because:
+
+You process the directory before its children
+d) Traversals of the given tree
+🔹 Inorder (Left → Root → Right)
+config → user → home → docs → root → var → log
+🔹 Preorder (Root → Left → Right)
+root → home → user → config → docs → var → log
+🔹 Postorder (Left → Right → Root)
+config → user → docs → home → log → var → root
+e) Why Postorder is used for safe deletion
+
+When deleting directories:
+
+A directory must be empty before deletion
+
+👉 Postorder ensures:
+
+Delete all files/subdirectories first
+Then delete the parent directory
+
+Example flow:
+
+config → user → docs → home → log → var → root
+
+So:
+
+config deleted first
+then user, then home
+finally root

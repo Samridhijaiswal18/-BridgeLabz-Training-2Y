@@ -1,0 +1,85 @@
+a) Postorder Traversal → Postfix Expression
+
+Postorder = Left → Right → Root
+
+Step:
+
+Left subtree (+): 3 5 +
+Right subtree (−): 8 2 −
+Root (×)
+
+👉 Postorder result:
+
+3 5 + 8 2 − ×
+
+👉 This is exactly postfix notation
+✔ Operators come after operands
+
+b) Inorder Traversal → Infix Expression
+
+Inorder = Left → Root → Right
+
+Raw traversal:
+
+3 + 5 × 8 − 2
+
+But this loses structure, so we add parentheses based on tree:
+
+👉 Final infix expression:
+
+(3 + 5) × (8 − 2)
+
+✔ Parentheses preserve correct precedence
+
+c) Preorder Traversal → Prefix Expression
+
+Preorder = Root → Left → Right
+
+👉 Result:
+
+× + 3 5 − 8 2
+
+👉 This is prefix notation
+✔ Operators come before operands
+
+d) Evaluate using Postorder (Stack Algorithm)
+
+Postfix: 3 5 + 8 2 − ×
+
+Algorithm:
+Create an empty stack
+Scan left → right:
+If operand → push
+If operator → pop 2 elements, apply operation, push result
+Step-by-step:
+Push 3, 5
++ → pop (3,5) → 3+5=8 → push 8
+Push 8, 2
+− → pop (8,2) → 8−2=6 → push 6
+× → pop (8,6) → 8×6=48
+
+👉 Final result = 48
+
+e) Expression Tree for: a × b + c / d − e
+Step 1: Operator precedence
+× and / first
+then +
+then −
+
+👉 Expression becomes:
+
+((a × b) + (c / d)) − e
+🌳 Tree Structure
+            −
+          /   \
+         +     e
+       /   \
+      ×     /
+     / \   / \
+    a   b c   d
+🔹 Inorder (Infix)
+((a × b) + (c / d)) − e
+🔹 Preorder (Prefix)
+− + × a b / c d e
+🔹 Postorder (Postfix)
+a b × c d / + e −

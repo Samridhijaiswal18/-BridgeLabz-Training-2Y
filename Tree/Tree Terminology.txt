@@ -1,0 +1,54 @@
+a) Leaf Nodes
+
+Leaf nodes are those with no children.
+
+👉 Leaf nodes:
+
+Dev1
+Dev2
+HR
+CFO (no child shown)
+b) Height of the Tree
+
+Height = number of edges in the longest path from root to a leaf
+
+Longest path:
+CEO → CTO → Dev Lead → Dev1 (or Dev2)
+
+Edges = 3
+
+👉 Height = 3
+
+c) Depth of “Dev Lead”
+
+Depth = number of edges from root to that node
+
+Path:
+CEO → CTO → Dev Lead
+
+Edges = 2
+
+👉 Depth = 2
+
+d) Ancestors of “Dev1”
+
+Ancestors = all nodes from root to parent
+
+Path:
+CEO → CTO → Dev Lead → Dev1
+
+👉 Ancestors:
+
+CEO
+CTO
+Dev Lead
+e) Degree of CTO
+
+Degree = number of children
+
+CTO has:
+
+Dev Lead
+HR
+
+👉 Degree = 2

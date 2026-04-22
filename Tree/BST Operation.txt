@@ -1,0 +1,59 @@
+a) Delete node 10 (node with two children)
+
+When deleting a node with two children, replace it with its inorder successor (smallest node in right subtree).
+
+👉 Right subtree of 10 → node 12
+👉 So, replace 10 with 12, then delete original 12
+
+Step-by-step:
+Replace 10 → 12
+Delete node 12 from its original position
+            15
+           /   \
+         12     20
+        /       /  \
+       8       17  25
+b) Insert roll number 14
+
+Follow BST insertion rules:
+
+14 < 15 → go left
+14 > 12 → go right
+Insert as right child of 12
+            15
+           /   \
+         12     20
+        /  \    /  \
+       8   14  17  25
+c) Insert roll number 9
+9 < 15 → left
+9 < 12 → left
+9 > 8 → right
+
+👉 Insert as right child of 8
+
+            15
+           /   \
+         12     20
+        /  \    /  \
+       8   14  17  25
+        \
+         9
+d) Find roll numbers between 10 and 20
+
+👉 Best approach: Inorder Traversal (Left → Root → Right)
+
+Why?
+
+It gives values in sorted order
+You can skip unnecessary branches:
+Ignore nodes < 10
+Stop after > 20
+
+👉 Efficient range query using inorder
+
+e) Time complexity of searching roll number 25
+🔹 Best Case
+Element is at root (not here, but theoretically)
+
+👉 O(1)
